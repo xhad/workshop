@@ -1,0 +1,59 @@
+
+<div class="container-narrow">
+<div ng-controller="IdeasCtrl">
+ 
+    <div class="row">     
+		<div class="col-md-2">
+				<form ng-submit="addPost()" style="margin-top:10px;">
+						        <button id="idea-button" type="submit" class="btn btn-primary">Share Idea</button>
+	    </div>
+					
+				        
+		<div class="col-md-8">
+						<textarea type="input" wrap="hard" class="form-control" placeholder="Amazing Idea" ng-model="idea"></textarea>
+		</div>       
+						       
+						     
+		
+						      
+				         </form>
+				 
+				 
+				</div>
+	
+                       
+
+				   
+							
+		
+	<div ng-repeat="post in posts | orderBy: '-upvotes'">
+	
+
+	   <div class="row">
+			 <div class="col-md-12"><div class="idea">{{post.idea}}</div></div>
+			  </div>
+
+
+
+       <div class="row">
+			  <div class="col-xs-12">
+		 		<span class="upvotes">{{post.upvotes}}</span>
+			     <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(post)"></span>
+			      </div>
+
+	    </div>
+	
+	  <hr>
+	 </div>
+
+
+
+
+
+
+    </div>
+</div>
+
+
+
+
